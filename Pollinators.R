@@ -20,12 +20,6 @@ poll_heat <- pollinators |>
 poll_heat |>
   glimpse()
 
-nleast |>
-  ggplot(aes(x = yearID,y = teamID)) +
-  geom_tile(aes(fill=W)) +
-  theme_classic() +
-  scale_fill_viridis(option="A")
-
 # heat map
 poll_heat |>
   ggplot(aes(x = year_collected, y = collection_method)) +
