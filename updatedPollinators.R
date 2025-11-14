@@ -69,7 +69,7 @@ pollheatmap <- plantspecies |>
   semi_join(top10visits, by = "plant_species") |> # only keeps top 10 plant species
   semi_join(top10pollinators, by = "pollinator_family") |> # only keeps top 10 pollinator families
   group_by(plant_species, pollinator_family) |>
-  summarise(visits = n(), .groups = "drop") # count visits
+  summarise(visits = n(), .groups = "drop") # ungroup data to keep as normal data frame 
 
 pollheatmap |>
   ggplot(aes(x = pollinator_family, y = reorder(plant_species, -visits))) +
@@ -82,7 +82,7 @@ pollheatmap |>
        subtitle = "In the Pacific Northwest from 2005 to 2017",
        fill = "Total Visits") +
   theme(
-    plot.title = element_text(family = "Times New Roman",
+    plot.title = element_text(family = "Times New Roman", 
                               face = "bold.italic",
                               size = 16),
     plot.subtitle = element_text(family = "Times New Roman",
