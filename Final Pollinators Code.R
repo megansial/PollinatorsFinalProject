@@ -63,10 +63,10 @@ poll_num |>
   theme(legend.position = "none") +
   theme(plot.title = element_text(family = "Times New Roman", face="bold", size = 18),
         plot.subtitle = element_text(family = "Times New Roman", size = 12)) +
-  theme(axis.title.x = element_text(family = "Times New Roman", face = 'bold', size = 14),
-        axis.text.x = element_text(family = "Times New Roman", size = 12),
-        axis.title.y = element_text(family = "Times New Roman", face = 'bold', size = 14),
-        axis.text.y = element_text(family = "Times New Roman", size = 12)) +
+  theme(axis.title.x = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.x = element_text(family = "Times New Roman", size = 14),
+        axis.title.y = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.y = element_text(family = "Times New Roman", size = 14)) +
   scale_y_continuous(limits = c(0, 1700),breaks = seq(0, 1700, by = 200)) +
   scale_x_continuous(limits = c(2005, 2017), breaks = seq(2005, 2017, by = 1))
 
@@ -92,10 +92,10 @@ poll_num |>
   theme(legend.position = "none") +
   theme(plot.title = element_text(family = "Times New Roman", face="bold", size = 18),
         plot.subtitle = element_text(family = "Times New Roman", size = 12)) +
-  theme(axis.title.x = element_text(family = "Times New Roman", face = 'bold', size = 14),
-        axis.text.x = element_text(family = "Times New Roman", size = 12),
-        axis.title.y = element_text(family = "Times New Roman", face = 'bold', size = 14),
-        axis.text.y = element_text(family = "Times New Roman", size = 12)) +
+  theme(axis.title.x = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.x = element_text(family = "Times New Roman", size = 14.5),
+        axis.title.y = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.y = element_text(family = "Times New Roman", size = 14.5)) +
   scale_y_continuous(limits = c(0, 2000),breaks = seq(0, 2000, by = 200)) +
   scale_x_continuous(limits = c(2004, 2018), breaks = seq(2004, 2018, by = 2)) +
   scale_fill_carto_c(palette = "OrYel", direction = -1)
@@ -164,9 +164,15 @@ ggplot(aes(x = location_name, y = frequency, fill = pollinator_genus)) +
     x = "Site (Location Name)",
     y = "Frequency of Pollinator Genus",
     fill = "Pollinator Genus") +
-  theme_minimal(base_size = 13) +
+  theme_light(base_size = 13) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-    legend.position = "right")
+    legend.position = "right") +
+  theme(plot.title = element_text(family = "Times New Roman", face="bold", size = 18),
+        plot.subtitle = element_text(family = "Times New Roman", size = 12)) +
+  theme(axis.title.x = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.x = element_text(family = "Times New Roman", size = 14),
+        axis.title.y = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.y = element_text(family = "Times New Roman", size = 14))
 
 # Identify the top 10 locations with most specimens
 top_locations <- pollinators_data |>
@@ -192,5 +198,10 @@ pollinator_top_locations |>
        title = "Pollinator Diversity by Location Site",
        subtitle = "Top 10 Sites with Most Specimens - Distribution Shown") +
   theme_classic() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(plot.title = element_text(family = "Times New Roman", face="bold", size = 18),
+        plot.subtitle = element_text(family = "Times New Roman", size = 12)) +
+  theme(axis.title.x = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.x = element_text(family = "Times New Roman", size = 14),
+        axis.title.y = element_text(family = "Times New Roman", face = 'bold', size = 15),
+        axis.text.y = element_text(family = "Times New Roman", size = 14))
